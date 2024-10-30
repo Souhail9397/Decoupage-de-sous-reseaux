@@ -30,12 +30,12 @@ Il y aura donc 62 adresses IP possibles d'affecter à des _hôtes_ sur ce résea
 On prend la puissance de 2 associée à 64 dans le tableau des puissances de 2 : 6.
 Un masque est constitué de 32bits. Donc 32bits - 6bits = un masque à 26bits pour les 4 sous-réseaux
 
-| Pôle          | Adresse du réseau| Adresse de broadcast |
-|---------------|------------------|----------------------|
-| Informatique  |  172.16.1.0 /26  |     172.16.1.63      |
-| Développement |  172.16.1.64 /26 |     172.16.1.127     |
-| Administratif |  172.16.1.128 /26|     172.16.1.191     |
-| Technicien    |  172.16.1.192 /26|     172.16.1.255     |  
+| Pôle          | Adresse du réseau| Début de plage | Fin de plage | Adresse de broadcast |
+|---------------|------------------|--------------- |--------------|----------------------|
+| Informatique  |  172.16.1.0 /26  |  172.16.1.1    | 172.16.1.62  |     172.16.1.63      |
+| Développement |  172.16.1.64 /26 |  172.16.1.65   | 172.16.1.126 |     172.16.1.127     |
+| Administratif |  172.16.1.128 /26|  172.16.1.129  | 172.16.1.190 |     172.16.1.191     |
+| Technicien    |  172.16.1.192 /26|  172.16.1.193  | 172.16.1.254 |     172.16.1.255     |  
 
 
 >### II - Découpage asymétrique  
@@ -48,10 +48,10 @@ Dans un premier temps on calcule le nombre d'hôtes maximum pour chaque départe
 
 Avec le découpage asymétrique, on commence par le sous-réseau qui va utiliser le plus d'équipements.
 
-| Pôle          | Adresse du réseau| Adresse de broadcast |
-|---------------|------------------|----------------------|
-| Informatique  |  172.16.1.0 /26  |     172.16.1.63      |
-| Administratif |  172.16.1.64 /27 |     172.16.1.95      |
-| Technicien    |  172.16.1.96 /27 |     172.16.1.127     |
-| Développement |  172.16.1.128 /28|     172.16.1.143     |  
+| Pôle          | Adresse du réseau| Début de plage | Fin de plage| Adresse de broadcast |
+|---------------|------------------|----------------|-------------|----------------------|
+| Informatique  |  172.16.1.0 /26  |  172.16.1.1    | 172.16.1.62 |     172.16.1.63      |
+| Administratif |  172.16.1.64 /27 |  172.16.1.65   | 172.16.1.94 |     172.16.1.95      |
+| Technicien    |  172.16.1.96 /27 |  172.16.1.97   | 172.16.1.126|     172.16.1.127     |
+| Développement |  172.16.1.128 /28|  172.16.1.129  | 172.16.1.142|     172.16.1.143     |  
 
